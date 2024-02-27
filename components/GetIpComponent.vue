@@ -1,6 +1,7 @@
 <template>
  <div>
   <h3 class="hidden">{{ clientIp }}</h3>
+  <h3 class="hidden">{{ data.ip }}</h3>
  </div>
 </template>
 

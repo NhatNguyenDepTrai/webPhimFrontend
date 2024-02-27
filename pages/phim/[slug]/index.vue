@@ -164,7 +164,17 @@ const submitRating = async (value, id_product) => {
 
   dataRating.value = dataReturn;
  } else {
-  console.error('helip world');
+  const { pending, data } = useFetch('https://api.ipify.org?format=json', {
+   lazy: true
+  });
+  watch(data, () => {
+   if (data.value) {
+    clientIp.value = data.value.ip;
+    console.log('IP: ' + data.value.ip);
+   } else {
+    console.log('not get data IP');
+   }
+  });
  }
 };
 
