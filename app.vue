@@ -5,18 +5,7 @@
 </template>
 <script setup >
 
-import { ref, watch } from 'vue';
-const { pending, data } = useFetch('https://api.ipify.org?format=json', {
-  lazy: true
-});
-const clientIp = useCookie('clientIp');
 
-watch(data, () => {
-  if (data.value) {
-    clientIp.value = data.value.ip;
-    console.log('yesip');
-  }
-});
 useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} | Kẻ Trộm Phim` : 'Kẻ Trộm Phim';

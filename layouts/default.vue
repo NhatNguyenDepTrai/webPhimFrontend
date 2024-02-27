@@ -174,6 +174,7 @@
     <div class="min-h-screen w-full bg-black/70 shadow-lg shadow-yellow-500/20">
      <div class="lg:border border-b border-l border-solid border-yellow-500 p-2 text-sm text-white/80 text-center">
       Chúc các bạn xem phim vui vẻ :)
+      <GetIpComponent />
      </div>
      <div class="w-full mt-3">
       <div class="grid grid-cols-12 gap-0">
