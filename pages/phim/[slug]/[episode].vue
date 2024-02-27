@@ -107,7 +107,7 @@
        Chọn tập phim
       </h3>
       <ul class="flex flex-wrap items-center justify-start">
-       <li v-for="item in data.product.episodes" class="ms-3">
+       <li v-for="item in data.product.episodes" class="ms-3 mb-3 ">
         <NuxtLink :to="'/phim/' + data.product.slug + '/' + item.slug">
          <button class="bg-gray-500 text-white hover:bg-sky-600 px-3 rounded py-1">{{ item.name }}</button>
         </NuxtLink>

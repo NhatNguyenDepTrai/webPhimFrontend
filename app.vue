@@ -14,6 +14,7 @@ const clientIp = useCookie('clientIp');
 watch(data, () => {
   if (data.value) {
     clientIp.value = data.value.ip;
+    console.log('yesip');
   }
 });
 useHead({
@@ -23,14 +24,14 @@ useHead({
   meta: [
     { name: 'og:description', content: 'Phim Mới chất lượng cao miễn phí. Xem phim hd VietSub. Phim thuyết minh chất lượng HD. Kho phim chuẩn nhanh online hay hấp dẫn.' },
     { name: 'description', content: 'Phim Mới chất lượng cao miễn phí. Xem phim hd VietSub. Phim thuyết minh chất lượng HD. Kho phim chuẩn nhanh online hay hấp dẫn.' },
-    { name: 'image', content: '/meta_mage.png' },
-    { name: 'og:image', content: '/meta_mage.png' },
+    { name: 'image', content: 'https://www.ketromphim.com/meta_image.png' },
+    { name: 'og:image', content: 'https://www.ketromphim.com/meta_image.png' },
   ],
   bodyAttrs: {
     class: 'test'
   },
   script: [{ innerHTML: 'console.log(\'Hello world\')' }]
-})
+});
 </script>
 <style>
 .page-enter-active,
