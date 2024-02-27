@@ -29,7 +29,7 @@
          </NuxtLink>
         </li>
         <li>
-         <NuxtLink to="#">
+         <NuxtLink>
           Thể loại
           <span style="margin-top: -10px;">
            <icon name="fa6-solid:sort-down" />
@@ -48,7 +48,7 @@
         </li>
 
         <li>
-         <NuxtLink to="#">
+         <NuxtLink>
           Quốc gia
           <span style="margin-top: -10px;">
            <icon name="fa6-solid:sort-down" />
