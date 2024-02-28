@@ -21,6 +21,9 @@ export default defineNuxtConfig({
   ],
   gtag: {
     id: 'GTM-NCKSDDDG'
+    tags: [
+      'G-PMR67PNF14' // Floodlight
+    ]
   },
   runtimeConfig: {
     public: {
