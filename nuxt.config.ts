@@ -16,8 +16,12 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@nuxtjs/seo',
     '@nuxtjs/tailwindcss',
-    'nuxt-swiper'
+    'nuxt-swiper',
+    'nuxt-gtag'
   ],
+  gtag: {
+    id: 'GTM-NCKSDDDG'
+  },
   runtimeConfig: {
     public: {
       apiBase: 'https://api.ketromphim.com/api',
