@@ -18,7 +18,7 @@
      <template v-else>
       <li class="relative mb-3">
        <NuxtLink :to="'/phim/' + item.slug">
-        <div class="grid grid-cols-12  w-full h-24 bg-black/50 hover:bg-black overflow-hidden text-white/80 hover:text-sky-500">
+        <div class="grid grid-cols-12  w-full h-24 bg-black/50 hover:bg-black overflow-hidden text-white/80 hover:text-sky-500 ">
          <div class="col-span-3 h-full flex items-start justify-center p-1">
           <img :src="item.url_avatar" class="w-full  h-auto" loading="lazy" alt="ketromphim.com" width="70" height="140">
          </div>
@@ -67,5 +67,13 @@ export default {
 </script>
 
 <style scoped>
-#topRatingProduct ul {}
+#topRatingProduct ul li h3 {
+ max-height: 37px;
+ overflow: hidden;
+ display: -webkit-box;
+ -webkit-line-clamp: 2;
+ -webkit-box-orient: vertical;
+ text-overflow: ellipsis;
+
+}
 </style>

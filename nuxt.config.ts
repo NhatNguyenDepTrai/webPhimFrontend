@@ -17,15 +17,10 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxtjs/tailwindcss',
     'nuxt-swiper',
-    'nuxt-gtag'
   ],
-  gtag: {
-    id: 'GTM-NCKSDDDG',
-    tags: [
-      'G-PMR67PNF14' // Floodlight
-    ]
-  },
+
   runtimeConfig: {
+
     public: {
       apiBase: 'https://api.ketromphim.com/api',
       // apiBase: 'http://api.webphim.demo/api',

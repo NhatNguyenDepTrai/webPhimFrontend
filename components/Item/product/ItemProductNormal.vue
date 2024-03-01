@@ -18,8 +18,9 @@
     </div>
    </div>
    <div class="text-white text-sm mt-3 mb-1 capitalize hover:text-sky-500">
-    {{ dataProduct.name }}
-
+    <h3>
+     {{ dataProduct.name }}
+    </h3>
 
    </div>
    <div class="text-white/50 text-xs capitalize">
@@ -44,6 +45,15 @@ export default {
 .product-item {
  width: 100%;
  cursor: pointer text-tran
+}
+
+.product-item h3 {
+ max-height: 37px;
+ overflow: hidden;
+ display: -webkit-box;
+ -webkit-line-clamp: 2;
+ -webkit-box-orient: vertical;
+ text-overflow: ellipsis;
 }
 
 @media only screen and (min-width: 960px) {
