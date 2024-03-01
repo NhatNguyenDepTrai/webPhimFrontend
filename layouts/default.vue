@@ -81,11 +81,11 @@
      </div>
 
 
-     <button @click="isSearchModal = true" class="flex  h-12 m-w-12 w-auto px-5 items-center justify-between bg-blue-500/90 text-white rounded  active:bg-sky-500">
-      <span class="text-white/80 me-3">
+     <button @click="isSearchModal = true" class="flex  h-12 min-w-12 w-auto md:px-5 items-center md:justify-between justify-center md:bg-sky-500/90 text-white rounded  active:bg-sky-500">
+      <span class="text-white me-3 md:block hidden">
        Tìm kiếm
       </span>
-      <icon name="fa6-solid:magnifying-glass" class="lg:text-xl text-base -z-1" />
+      <icon name="fa6-solid:magnifying-glass" class="md:text-xl text-lg -z-1" />
      </button>
 
 
