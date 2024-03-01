@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     'nuxt-gtag'
   ],
   gtag: {
-    id: 'GTM-NCKSDDDG'
+    id: 'GTM-NCKSDDDG',
     tags: [
       'G-PMR67PNF14' // Floodlight
     ]

@@ -3,8 +3,17 @@
   <header class="w-full  flex justify-center ">
    <div class="page-content w-full h-full lg:bg-black/70 shadow-lg shadow-cyan-500/50  bg-zinc-950">
     <div class="flex items-center justify-between w-full h-full">
+     <div class="lg:hidden block">
+      <button v-if="!isMobileMenu" @click="isMobileMenu = !isMobileMenu" class="h-12 w-12 bg-gray-800/50 rounded flex items-center justify-center me-3 active:bg-sky-500">
+       <Icon name="material-symbols:menu" class="text-4xl text-white" />
+      </button>
+      <button v-else @click="isMobileMenu = !isMobileMenu" class="h-12 w-12 bg-gray-800/50 rounded flex items-center justify-center me-3  text-white active:text-red-500">
+       <Icon name="mdi:close-outline" class="text-4xl" />
+      </button>
 
+     </div>
      <div class=" h-full flex items-center ">
+
       <div class="lg:w-56 lg:h-full  w-auto h-8   bg-black flex items-center justify-center">
        <NuxtLink to="/">
         <h3 v-if="pending" class="text-white/80 font-bold text-xl">Kẻ Trộm Phim</h3>
@@ -70,29 +79,22 @@
       </div>
 
      </div>
-     <div>
-      <div class="lg:hidden block">
-       <button v-if="!isMobileMenu" @click="isMobileMenu = !isMobileMenu" class="h-12 w-12 bg-gray-800/50 rounded flex items-center justify-center me-3 active:bg-sky-500">
-        <Icon name="material-symbols:menu" class="text-4xl text-white" />
-       </button>
-       <button v-else @click="isMobileMenu = !isMobileMenu" class="h-12 w-12 bg-gray-800/50 rounded flex items-center justify-center me-3  text-white active:text-red-500">
-        <Icon name="mdi:close-outline" class="text-4xl" />
-       </button>
 
-      </div>
 
-      <div class="lg:flex hidden h-10 lg:w-34 m-w-20  lg:me-0 me-1  items-center bg-black/30 shadow-inner  shadow-black  rounded overflow-hidden	text-white/80">
-       <input type="text" class="bg-inherit border-0 text-base lg:px-3 px-1  h-full   focus:outline-none active:outline-none">
-       <button class="flex items-center justify-center lg:px-3 w-10 h-full active:bg-sky-500">
-        <icon name="fa6-solid:magnifying-glass" class="lg:text-xl text-base " />
-       </button>
-      </div>
+     <button @click="isSearchModal = true" class="flex  h-12 m-w-12 w-auto px-5 items-center justify-between bg-blue-500/90 text-white rounded  active:bg-sky-500">
+      <span class="text-white/80 me-3">
+       Tìm kiếm
+      </span>
+      <icon name="fa6-solid:magnifying-glass" class="lg:text-xl text-base -z-1" />
+     </button>
 
-     </div>
 
     </div>
    </div>
   </header>
+
+  <SearchModal :isSearch="isSearchModal" @close="handleSearchModalClose" />
+
   <div class="absolute z-10 w-full  bg-black/90 pb-5 " v-if="isMobileMenu">
    <div class="capitalize">
     <ul class="text-white/80 text-xl">
@@ -226,7 +228,11 @@ const { pending, data } = useFetch(config.public.apiBase + '/' + 'get-data-web',
  lazy: true
 });
 const isMobileMenu = ref(false);
-
+const isSearchModal = ref(false);
+const handleSearchModalClose = (newValue) => {
+ console.log(newValue);
+ isSearchModal.value = newValue;
+};
 </script>
 
 <style scoped >

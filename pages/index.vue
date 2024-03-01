@@ -11,7 +11,7 @@
         <div v-if="!pending && data && data.dataBanner.length > 0">
           <Slide :data="data.dataBanner" />
         </div>
-        <div class="mt-5">
+        <div class="mt-5 mb-14">
           <div class="flex items-center justify-between mb-3">
             <div>
               <CateTittle class="mb-3">Phim mới nổi bật</CateTittle>
@@ -26,7 +26,7 @@
             </div>
           </div>
         </div>
-        <div class="mt-5" v-if="!pending && data && data.dataProductSeries && data.dataProductSeries.length > 0">
+        <div class="mt-5 mb-14" v-if="!pending && data && data.dataProductSeries && data.dataProductSeries.length > 0">
           <div class="flex items-center justify-between mb-3">
             <div>
               <CateTittle class="mb-3">Phim bộ mới</CateTittle>
@@ -45,7 +45,7 @@
             </div>
           </div>
         </div>
-        <div class="mt-5" v-if="!pending && data && data.dataProductCinema && data.dataProductCinema.length > 0">
+        <div class="mt-5 mb-14" v-if="!pending && data && data.dataProductCinema && data.dataProductCinema.length > 0">
           <div class="flex items-center justify-between mb-3">
             <div>
               <CateTittle class="mb-3">Phim chiếu rạp mới</CateTittle>
@@ -64,7 +64,7 @@
             </div>
           </div>
         </div>
-        <div class="mt-5" v-if="!pending && data && data.dataProductFeature && data.dataProductFeature.length > 0">
+        <div class="mt-5 mb-14" v-if="!pending && data && data.dataProductFeature && data.dataProductFeature.length > 0">
           <div class="flex items-center justify-between mb-3">
             <div>
               <CateTittle class="mb-3">Phim lẻ mới</CateTittle>
