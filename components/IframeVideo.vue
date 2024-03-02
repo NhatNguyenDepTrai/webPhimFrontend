@@ -1,12 +1,24 @@
 <template lang="">
  <div>
-  <div  class="iframe_video">
-  <iframe class="metaframe rptss" :src="embed_url" frameborder="0" scrolling="no" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
- </div>
+  <div  class="iframe_video relative">
+  <div class="absolute w-full h-full bg-black/50 top-0 left-0" v-if="isAds">
+   <a @click="isAds = false" href="https://atservineor.com/4/7164441" target="_blank">
+   <div class="w-full h-full flex items-center justify-center"> 
+    <Icon name = "material-symbols:play-circle" class="text-white" style="font-size:100px"/>
+   </div>
+   </a>
+  </div>
+  <iframe v-else class="metaframe rptss" :src="embed_url" frameborder="0" scrolling="no" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+ </div> 
  </div>
 </template>
 <script>
 export default {
+  data () {
+    return {
+     isAds:true,
+    }
+  },
  props: {
   embed_url: String
  },

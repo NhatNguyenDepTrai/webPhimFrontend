@@ -1,9 +1,12 @@
 <template>
   <div>
+    
     <NuxtPage />
+ 
   </div>
 </template>
 <script setup >
+
 
 
 useHead({
@@ -17,11 +20,11 @@ useHead({
     { name: 'image', content: 'https://www.ketromphim.com/meta_image.png' },
     { name: 'og:image', content: 'https://www.ketromphim.com/meta_image.png' },
   ],
-  bodyAttrs: {
-    class: 'test'
-  },
-
-
+  script: [
+      // Thêm tệp JavaScript từ thư mục public
+      { src: '/adsExoclick.js', body: true } // Sử dụng body: true để thêm script vào cuối thẻ body
+    ]
+ 
 });
 </script>
 <style>
@@ -35,4 +38,4 @@ useHead({
   opacity: 0;
   filter: blur(1rem);
 }
-</style>            
+</style>

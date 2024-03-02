@@ -23,7 +23,7 @@
       <div class="h-full lg:block hidden">
        <ul class="header-menu">
         <li>
-         <NuxtLink to="/" class="ads_popup">
+         <NuxtLink to="/" class="">
           Phim Mới
          </NuxtLink>
         </li>
@@ -179,9 +179,7 @@
       Click vào quảng cáo , không cần xem, để ad có tiền mua bỉm cho con, xin cảm ơn :))
       <GetIpComponent />
      </div>
-     <div class="flex items-center justify-center">
-      <ItemAdsTop iframe='<iframe src="//a.magsrv.com/iframe.php?idzone=5221998&size=728x90" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>' />
-     </div>
+    
      <div class="w-full mt-3">
       <div class="grid grid-cols-12 gap-0">
        <div class="lg:col-span-9 col-span-12">
@@ -205,10 +203,7 @@
            </template>
           </ul>
          </div>
-         <div class="w-full mb-1 flex items-center justify-center">
-          <ItemAdsLeft iframe='<iframe src="//a.magsrv.com/iframe.php?idzone=5224504&size=300x250" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>' />
-
-         </div>
+        
          <div>
           <slot name="topRatingProduct" />
 

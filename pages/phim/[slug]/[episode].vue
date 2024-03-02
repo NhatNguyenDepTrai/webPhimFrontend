@@ -39,7 +39,7 @@
        </li>
       </ul>
      </div>
-
+     
      <div v-if="data.embed_url">
 
 
