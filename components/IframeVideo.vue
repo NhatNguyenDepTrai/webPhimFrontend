@@ -10,7 +10,7 @@
   </div>
   <div v-else class="w-full h-full">
   <div class="p-5 w-full h-full"  v-if="type== 'video'">
-    <video  controls>
+    <video    controls autoplay controlsList="nodownload" oncontextmenu="return false;">
   <source :src="embed_url" type="video/mp4">
   <source src="https://t4.ftcdn.net/jpg/03/70/42/69/360_F_370426939_YwozPjAdQbT5k2lviyfmkNl2z2u0CSxb.jpg" type="video/ogg">
 </video>
