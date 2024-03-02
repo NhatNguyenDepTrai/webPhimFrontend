@@ -17,7 +17,13 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxtjs/tailwindcss',
     'nuxt-swiper',
+    '@nuxtjs/sitemap',
+    'nuxt-simple-robots',
+    'nuxt-schema-org'
   ],
+  site: {
+    url: 'https://www.ketromphim.com',
+  },
 
   runtimeConfig: {
 
