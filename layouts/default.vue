@@ -176,7 +176,7 @@
    <div class="page-content w-full ">
     <div class="min-h-screen w-full bg-black/70 shadow-lg shadow-yellow-500/20">
      <div class="lg:border border-b border-l border-solid border-yellow-500 p-2 text-sm text-white/80 text-center">
-      Click vào quảng cáo , không cần xem, để ad có tiền mua bỉm cho con, xin cảm ơn :))
+    Web chỉ chạy vài quảng cáo kiếm lon sữa, cái bỉm cho con, xin cảm ơn :))
       <GetIpComponent />
      </div>
     
