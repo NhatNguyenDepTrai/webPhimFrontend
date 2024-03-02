@@ -11,6 +11,7 @@ useHead({
     return titleChunk ? `${titleChunk} | Kẻ Trộm Phim` : 'Kẻ Trộm Phim';
   },
   meta: [
+    { name: 'monetag', content: 'cac41a73e707d7bf37f01f545e2542ce' },
     { name: 'og:description', content: 'Phim Mới chất lượng cao miễn phí. Xem phim hd VietSub. Phim thuyết minh chất lượng HD. Kho phim chuẩn nhanh online hay hấp dẫn.' },
     { name: 'description', content: 'Phim Mới chất lượng cao miễn phí. Xem phim hd VietSub. Phim thuyết minh chất lượng HD. Kho phim chuẩn nhanh online hay hấp dẫn.' },
     { name: 'image', content: 'https://www.ketromphim.com/meta_image.png' },
@@ -19,7 +20,8 @@ useHead({
   bodyAttrs: {
     class: 'test'
   },
-  script: [{ innerHTML: 'console.log(\'Hello world\')' }]
+
+
 });
 </script>
 <style>
@@ -33,4 +35,4 @@ useHead({
   opacity: 0;
   filter: blur(1rem);
 }
-</style>
+</style>            

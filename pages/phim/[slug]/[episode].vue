@@ -41,8 +41,11 @@
      </div>
 
      <div v-if="data.embed_url">
+
+
       <IframeVideo :embed_url="data.embed_url" v-if="!embed_url" />
       <IframeVideo :embed_url="embed_url" v-else />
+
      </div>
      <div v-if="data.episode">
       <div class="w-full py-3">

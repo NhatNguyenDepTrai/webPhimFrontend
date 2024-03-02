@@ -23,8 +23,8 @@
       <div class="h-full lg:block hidden">
        <ul class="header-menu">
         <li>
-         <NuxtLink to="/danh-muc/phim-chieu-rap">
-          Phim chiếu rạp
+         <NuxtLink to="/" class="ads_popup">
+          Phim Mới
          </NuxtLink>
         </li>
         <li>
@@ -115,9 +115,10 @@
 
      </li>
      <li class="font-bold   border-b border-gray-100/20">
-      <NuxtLink to="/danh-muc/phim-chieu-rap">
+      <NuxtLink to="/">
        <h3 class=" py-3 px-3  font-bold active:bg-sky-500">
-        Phim Chiếu Rạp
+        Phim Mới
+
        </h3>
       </NuxtLink>
      </li>
@@ -175,8 +176,11 @@
    <div class="page-content w-full ">
     <div class="min-h-screen w-full bg-black/70 shadow-lg shadow-yellow-500/20">
      <div class="lg:border border-b border-l border-solid border-yellow-500 p-2 text-sm text-white/80 text-center">
-      Chúc các bạn xem phim vui vẻ :)
+      Click vào quảng cáo , không cần xem, để ad có tiền mua bỉm cho con, xin cảm ơn :))
       <GetIpComponent />
+     </div>
+     <div class="flex items-center justify-center">
+      <ItemAdsTop iframe='<iframe src="//a.magsrv.com/iframe.php?idzone=5221998&size=728x90" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>' />
      </div>
      <div class="w-full mt-3">
       <div class="grid grid-cols-12 gap-0">
@@ -201,7 +205,10 @@
            </template>
           </ul>
          </div>
+         <div class="w-full mb-1 flex items-center justify-center">
+          <ItemAdsLeft iframe='<iframe src="//a.magsrv.com/iframe.php?idzone=5224504&size=300x250" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>' />
 
+         </div>
          <div>
           <slot name="topRatingProduct" />
 

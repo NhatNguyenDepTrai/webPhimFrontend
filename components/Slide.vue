@@ -15,7 +15,7 @@
 }" :modules="[SwiperAutoplay, SwiperPagination]" class="mySwiper w-full pb-16" style="padding-bottom: 30px;">
          <SwiperSlide class="p-3 " v-for="item in data">
 
-            <NuxtLink to="/">
+            <NuxtLink :to="'/phim/' + item.slug">
                <div class="w-full slide-item flex items-end relative  bg-black text-white transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" :style="{ 'background-image': 'url(' + item.url_bg + ')' }">
                   <div class="w-full p-3 text-white ">
                      <h3 class="text-base font-bold">{{ item.name }}</h3>
