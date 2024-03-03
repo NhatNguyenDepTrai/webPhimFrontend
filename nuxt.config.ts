@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     'nuxt-simple-robots',
     'nuxt-schema-org'
   ],
+
   site: {
     url: 'https://www.ketromphim.com',
   },

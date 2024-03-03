@@ -1,15 +1,10 @@
 <template lang="">
   <div>
     <Title v-if="!pending && data.year">Phim  {{ data.year.name }} </Title>
-    <Meta v-if="!pending && data.year" name="og:image" :content="data.year.meta_image" />
-  <Meta v-if="!pending && data.year" name="og:title" :content="data.year.meta_title" />
-  <Meta v-if="!pending && data.year" name="og:description" :content="data.year.meta_desc" />
-  <Meta v-if="!pending && data.year" property="og:image" :content="data.year.meta_image" />
-  <Meta v-if="!pending && data.year" property="og:title" :content="data.year.meta_title" />
-  <Meta v-if="!pending && data.year" property="og:description" :content="data.year.meta_desc" />
-  <Meta v-if="!pending && data.year" name="image" :content="data.year.meta_image" />
-  <Meta v-if="!pending && data.year" name="title" :content="data.year.meta_title" />
-  <Meta v-if="!pending && data.year" name="description" :content="data.year.meta_desc" />
+  <Meta v-if="!pending && data.year" name="og:title" :content="'Danh sách phim năm '+data.year.name + ' | Kẻ Trộm Phim '" />
+  <Meta v-if="!pending && data.year" property="og:title" :content="'Danh sách phim năm '+data.year.name + ' | Kẻ Trộm Phim '" />
+  <Meta v-if="!pending && data.year" name="title" :content="'Danh sách phim năm '+data.year.name + ' | Kẻ Trộm Phim '" />
+
 
 
    <NuxtLayout>

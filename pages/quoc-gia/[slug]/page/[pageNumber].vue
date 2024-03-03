@@ -1,15 +1,9 @@
 <template lang="">
   <div>
     <Title v-if="!pending && data.nation">Phim  {{ data.nation.name }} </Title>
-    <Meta v-if="!pending && data.nation" name="og:image" :content="data.nation.meta_image" />
-  <Meta v-if="!pending && data.nation" name="og:title" :content="data.nation.meta_title" />
-  <Meta v-if="!pending && data.nation" name="og:description" :content="data.nation.meta_desc" />
-  <Meta v-if="!pending && data.nation" property="og:image" :content="data.nation.meta_image" />
-  <Meta v-if="!pending && data.nation" property="og:title" :content="data.nation.meta_title" />
-  <Meta v-if="!pending && data.nation" property="og:description" :content="data.nation.meta_desc" />
-  <Meta v-if="!pending && data.nation" name="image" :content="data.nation.meta_image" />
-  <Meta v-if="!pending && data.nation" name="title" :content="data.nation.meta_title" />
-  <Meta v-if="!pending && data.nation" name="description" :content="data.nation.meta_desc" />
+    <Meta v-if="!pending && data.nation" name="og:title" :content="'Danh sách phim  '+data.nation.name + ' | Kẻ Trộm Phim '" />
+  <Meta v-if="!pending && data.nation" property="og:title" :content="'Danh sách phim  '+data.nation.name + ' | Kẻ Trộm Phim '" />
+  <Meta v-if="!pending && data.nation" name="title" :content="'Danh sách phim  '+data.nation.name + ' | Kẻ Trộm Phim '" />
 
 
    <NuxtLayout>

@@ -1,15 +1,9 @@
 <template lang="">
   <div>
     <Title v-if="!pending && data.type"> {{ data.type.name }} </Title>
-    <Meta v-if="!pending && data.type" name="og:image" :content="data.type.meta_image" />
-  <Meta v-if="!pending && data.type" name="og:title" :content="data.type.meta_title" />
-  <Meta v-if="!pending && data.type" name="og:description" :content="data.type.meta_desc" />
-  <Meta v-if="!pending && data.type" property="og:image" :content="data.type.meta_image" />
-  <Meta v-if="!pending && data.type" property="og:title" :content="data.type.meta_title" />
-  <Meta v-if="!pending && data.type" property="og:description" :content="data.type.meta_desc" />
-  <Meta v-if="!pending && data.type" name="image" :content="data.type.meta_image" />
-  <Meta v-if="!pending && data.type" name="title" :content="data.type.meta_title" />
-  <Meta v-if="!pending && data.type" name="description" :content="data.type.meta_desc" />
+    <Meta v-if="!pending && data.type" name="og:title" :content="'Danh sách phim  '+data.type.name + ' | Kẻ Trộm Phim '" />
+  <Meta v-if="!pending && data.type" property="og:title" :content="'Danh sách phim  '+data.type.name + ' | Kẻ Trộm Phim '" />
+  <Meta v-if="!pending && data.type" name="title" :content="'Danh sách phim  '+data.type.name + ' | Kẻ Trộm Phim '" />
 
 
    <NuxtLayout>
