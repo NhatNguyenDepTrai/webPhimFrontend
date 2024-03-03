@@ -4,10 +4,10 @@
    <div class="page-content w-full h-full lg:bg-black/70 shadow-lg shadow-cyan-500/50  bg-zinc-950">
     <div class="flex items-center justify-between w-full h-full">
      <div class="lg:hidden block">
-      <button v-if="!isMobileMenu" @click="isMobileMenu = !isMobileMenu" class="h-12 w-12 bg-gray-800/50 rounded flex items-center justify-center me-3 active:bg-sky-500">
+      <button   aria-label="Show Menu"  v-if="!isMobileMenu" @click="isMobileMenu = !isMobileMenu" class="h-12 w-12 bg-gray-800/50 rounded flex items-center justify-center me-3 active:bg-sky-500">
        <Icon name="material-symbols:menu" class="text-4xl text-white" />
       </button>
-      <button v-else @click="isMobileMenu = !isMobileMenu" class="h-12 w-12 bg-gray-800/50 rounded flex items-center justify-center me-3  text-white active:text-red-500">
+      <button    aria-label="Show Menu" v-else @click="isMobileMenu = !isMobileMenu" class="h-12 w-12 bg-gray-800/50 rounded flex items-center justify-center me-3  text-white active:text-red-500">
        <Icon name="mdi:close-outline" class="text-4xl" />
       </button>
 
@@ -17,7 +17,8 @@
       <div class="lg:w-56 lg:h-full  w-auto h-8   bg-black flex items-center justify-center">
        <NuxtLink to="/">
         <h3 v-if="pending" class="text-white/80 font-bold text-xl">Kẻ Trộm Phim</h3>
-        <img class="logo h-full w-auto" v-else :src="data.dataWeb.url_avatar_full" width="auto" height="32" alt="ketromphim.com">
+       <NuxtImg  v-else class="logo h-full w-auto" :src="data.dataWeb.url_avatar_full" width="200" height="32" alt="ketromphim.com"/>
+
        </NuxtLink>
       </div>
       <div class="h-full lg:block hidden">
@@ -81,7 +82,7 @@
      </div>
 
 
-     <button @click="isSearchModal = true" class="flex  h-12 min-w-12 w-auto md:px-5 items-center md:justify-between justify-center md:bg-sky-500/90 text-white rounded  active:bg-sky-500">
+     <button  aria-label="Show Modal Search" @click="isSearchModal = true" class="flex  h-12 min-w-12 w-auto md:px-5 items-center md:justify-between justify-center md:bg-sky-500/90 text-white rounded  active:bg-sky-500">
       <span class="text-white me-3 md:block hidden">
        Tìm kiếm
       </span>

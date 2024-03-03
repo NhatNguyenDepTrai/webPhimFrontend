@@ -2,7 +2,7 @@
  <div>
   <div class="relative product-item" v-if="dataProduct">
    <div class="logo transition-all duration-300">
-    <img :src="dataProduct.url_avatar" class="transition ease-in-out delay-150 bg-blue-500 	  duration-300" loading="lazy" alt="ketromphim.com" width="200" height="150">
+    <NuxtImg :src="dataProduct.url_avatar"  class="transition ease-in-out delay-150 bg-blue-500 	  duration-300" loading="lazy" alt="ketromphim.com" width="200" height="150"/>
     <div class="absolute w-full h-full bg-black/50 flex items-center justify-center play-icon   transition-all duration-150 delay-100	">
      <Icon name="fa6-solid:circle-play" class="text-white transition-all duration-300" />
     </div>

@@ -19,15 +19,17 @@ export default defineNuxtConfig({
     'nuxt-swiper',
     '@nuxtjs/sitemap',
     'nuxt-simple-robots',
-    'nuxt-schema-org'
+    'nuxt-schema-org',
+    '@nuxt/image',
   ],
-
+  image: {
+    quality: 80,
+    format: ['webp']
+  },
   site: {
     url: 'https://www.ketromphim.com',
   },
-
   runtimeConfig: {
-
     public: {
       apiBase: 'https://api.ketromphim.com/api',
       // apiBase: 'http://api.webphim.demo/api',

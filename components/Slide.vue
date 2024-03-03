@@ -16,15 +16,21 @@
          <SwiperSlide class="p-3 " v-for="item in data">
 
             <NuxtLink :to="'/phim/' + item.slug">
-               <div class="w-full slide-item flex items-end relative  bg-black text-white transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" :style="{ 'background-image': 'url(' + item.url_bg + ')' }">
+         
+               <div class=" w-full slide-item flex items-end relative bg-black/30  text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" >
+                
+                  <div class="w-full h-full absolute top-0 left-0 -z-50">
+                     <!-- <NuxtPicture format="avif,webp" :src="item.url_bg"  alt="ketromphim.com" loading="lazy" width="400" height="200" class="w-full h-full " /> -->
+                     <NuxtImg :src="item.url_bg"  alt="ketromphim.com" loading="lazy" width="400" height="200" class="w-full h-full "/>
+                 </div>
+                 
                   <div class="w-full p-3 text-white ">
                      <h3 class="text-base font-bold">{{ item.name }}</h3>
                      <h5 class="text-sm">{{ item.yearName }}</h5>
                   </div>
-                  <div class="absolute right-0 bottom-0">
+                  <div class="min-w-28 text-center">
                      <div class="bg-sky-600 uppercase px-3 py-1 text-sm font-bold">
                         {{ item.newEpisode }}
-
                      </div>
                   </div>
                </div>

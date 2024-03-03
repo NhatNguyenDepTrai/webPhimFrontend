@@ -34,7 +34,7 @@
   
  
  <div class="my-10 flex items-center justify-center" v-if="!pending">
-  <Pagiyear :urlPage="'/quoc-gia/'+route.params.slug" :totalPage="data.dataProduct.last_page":current_page="data.dataProduct.current_page" />
+  <Pagination :urlPage="'/quoc-gia/'+route.params.slug" :totalPage="data.dataProduct.last_page":current_page="data.dataProduct.current_page" />
 
  </div>
 

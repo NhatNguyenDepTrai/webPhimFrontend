@@ -33,7 +33,7 @@
             </div>
             <div>
               <NuxtLink to="/danh-muc/phim-bo">
-                <button class="text-xs uppercase bg-sky-500 text-white px-2 py-1 rounded">Xem Thêm</button>
+                <button  aria-label="Danh sách phim bộ" class="text-xs uppercase bg-sky-500 text-white px-2 py-1 rounded">Xem Thêm</button>
               </NuxtLink>
             </div>
           </div>
@@ -51,8 +51,8 @@
               <CateTittle class="mb-3">Phim chiếu rạp mới</CateTittle>
             </div>
             <div>
-              <NuxtLink to="/danh-muc/phim-bo">
-                <button class="text-xs uppercase bg-sky-500 text-white px-2 py-1 rounded">Xem Thêm</button>
+              <NuxtLink to="/danh-muc/phim-chieu-rap">
+                <button  aria-label="Danh sách phim chiếu rạp" class="text-xs uppercase bg-sky-500 text-white px-2 py-1 rounded">Xem Thêm</button>
               </NuxtLink>
             </div>
           </div>
@@ -70,8 +70,8 @@
               <CateTittle class="mb-3">Phim lẻ mới</CateTittle>
             </div>
             <div>
-              <NuxtLink to="/danh-muc/phim-bo">
-                <button class="text-xs uppercase bg-sky-500 text-white px-2 py-1 rounded">Xem Thêm</button>
+              <NuxtLink to="/danh-muc/phim-le">
+                <button  aria-label="Danh sách phim lẻ"  class="text-xs uppercase bg-sky-500 text-white px-2 py-1 rounded">Xem Thêm</button>
               </NuxtLink>
             </div>
           </div>
