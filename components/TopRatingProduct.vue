@@ -7,8 +7,11 @@
      <template v-if="index == 0">
       <li class="relative mb-3 ">
        <NuxtLink :to="'/phim/' + item.slug" class="">
-    <NuxtImg  quality="80" format="webp"  :src="item.url_bg" class=" hover:brightness-50 w-full  h-auto" loading="lazy" alt="ketromphim.com" width="200" height="150"/>
-        <div class="absolute bottom-0 left-0 p-2">
+          
+    <NuxtImg v-if="item.url_bg"  quality="80" format="webp"  :src="item.url_bg" class=" hover:brightness-50 w-full  h-auto" loading="lazy" alt="ketromphim.com" width="200" height="150"/>
+    <NuxtImg v-else  quality="80" format="webp"  src="meta_image.png" class=" hover:brightness-50 w-full  h-auto" loading="lazy" alt="ketromphim.com" width="200" height="150"/>
+     
+    <div class="absolute bottom-0 left-0 p-2">
          <h4 class="text-sm  text-white">{{ item.name }}</h4>
          <h5 class="text-sm  text-white/50"> {{ item.yearName }}</h5>
         </div>

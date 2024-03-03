@@ -45,9 +45,11 @@ export default {
 <style lang="css" >
 .product-item {
  width: 100%;
- cursor: pointer text-tran
+ cursor: pointer;
 }
-
+.product-item:active{
+ color: skyblue;
+}
 .product-item h3 {
  max-height: 37px;
  overflow: hidden;
@@ -84,20 +86,8 @@ export default {
   font-size: 10px;
  }
 }
+@media only screen and (min-width: 501px) {
 
-@media only screen and (max-width: 500px) {
-
- .product-item .logo {
-  width: 100%;
-  height: 200px;
-  display: flex;
-  align-items: top;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  font-size: 10px;
- }
-}
 
 .product-item .logo:hover img {
  transform: translateY(0.25rem);
@@ -121,4 +111,21 @@ export default {
  font-size: 50px;
 
 }
+}
+@media only screen and (max-width: 500px) {
+ .product-item .logo .play-icon {
+ display: none;
+}
+ .product-item .logo {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  font-size: 10px;
+ }
+}
+
 </style>

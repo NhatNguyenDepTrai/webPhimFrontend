@@ -115,14 +115,7 @@
       </NuxtLink>
 
      </li>
-     <li class="font-bold   border-b border-gray-100/20">
-      <NuxtLink to="/">
-       <h3 class=" py-3 px-3  font-bold active:bg-sky-500">
-        Phim Mới
-
-       </h3>
-      </NuxtLink>
-     </li>
+    
      <li class="font-bold   border-b border-gray-100/20">
       <NuxtLink to="/danh-muc/phim-le">
        <h3 class=" py-3 px-3  font-bold active:bg-sky-500">
@@ -250,12 +243,12 @@ header {
 .router-link-active {
  color: skyblue !important;
 }
-
-@media only screen and (min-width: 960px) {
- header .logo {
+header .logo {
   width: auto;
   height: 55px;
  }
+@media only screen and (min-width: 960px) {
+
 
  header ul.header-menu {
   display: flex;
@@ -307,4 +300,14 @@ header {
   display: block;
  }
 }
+@media only screen and (max-width: 960px) {
+
+header{
+  height: 50px;
+}
+header .logo{
+  height: 45px;
+}
+}
+
 </style>
