@@ -2,9 +2,8 @@
  <div>
   <div class="relative product-item" v-if="dataProduct">
    <div class="logo transition-all duration-300">
-    <NuxtPicture format="avif,webp" :src="dataProduct.url_avatar"  class="transition ease-in-out delay-150 bg-blue-500 	  duration-300" loading="lazy" alt="ketromphim.com" width="200" height="150"/>
    
-    <!-- <NuxtImg  format="avif,webp" :src="dataProduct.url_avatar"  class="transition ease-in-out delay-150 bg-blue-500 	  duration-300" loading="lazy" alt="ketromphim.com" width="200" height="150"/> -->
+    <NuxtImg  quality="80" format="webp"  :src="dataProduct.url_avatar"  class="transition ease-in-out delay-150 bg-blue-500 	  duration-300" loading="lazy" alt="ketromphim.com" width="200" height="150"/>
     <div class="absolute w-full h-full bg-black/50 flex items-center justify-center play-icon   transition-all duration-150 delay-100	">
      <Icon name="fa6-solid:circle-play" class="text-white transition-all duration-300" />
     </div>
@@ -46,7 +45,7 @@ export default {
 <style lang="css" >
 .product-item {
  width: 100%;
- cursor: pointer ;
+ cursor: pointer text-tran
 }
 
 .product-item h3 {
@@ -70,14 +69,13 @@ export default {
   overflow: hidden;
   font-size: 10px;
  }
- 
 }
 
 @media only screen and (max-width: 960px) {
 
  .product-item .logo {
   width: 100%;
-  height: 210px;
+  height: 250px;
   display: flex;
   align-items: top;
   justify-content: center;
@@ -91,7 +89,7 @@ export default {
 
  .product-item .logo {
   width: 100%;
-  height: 190px;
+  height: 200px;
   display: flex;
   align-items: top;
   justify-content: center;
