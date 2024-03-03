@@ -20,8 +20,8 @@
                <div class=" w-full slide-item flex items-end relative bg-black/30  text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" >
                 
                   <div class="w-full h-full absolute top-0 left-0 -z-50">
-                     <!-- <NuxtPicture format="avif,webp" :src="item.url_bg"  alt="ketromphim.com" loading="lazy" width="400" height="200" class="w-full h-full " /> -->
-                     <NuxtImg :src="item.url_bg"  alt="ketromphim.com" loading="lazy" width="400" height="200" class="w-full h-full "/>
+                     <NuxtPicture format="avif,webp" :src="item.url_bg"  alt="ketromphim.com" loading="lazy" width="400" height="200" class="w-full h-full " />
+                     <!-- <NuxtImg :src="item.url_bg"  alt="ketromphim.com" loading="lazy" width="400" height="200" class="w-full h-full "/> -->
                  </div>
                  
                   <div class="w-full p-3 text-white ">
@@ -57,5 +57,10 @@ export default {
 .slide-item {
    height: 200px;
    background-size: cover;
+   overflow: hidden;
+}
+.slide-item picture{
+   width: 100%;
+   height: 100%;
 }
 </style>
