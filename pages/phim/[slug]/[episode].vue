@@ -2,13 +2,13 @@
  <div>
   <Title v-if="!pending && data.product"> {{ data.product.name }} - {{ data.episode.name }}</Title>
   <Meta v-if="!pending && data.product" name="og:image" :content="data.product.meta_image" />
-  <Meta v-if="!pending && data.product" name="og:title" :content="'Xem phim ' + data.product.name + ' - ' + data.product.full_name  + ' ' + data.episode.name + ' | Kẻ Trộm Phim '" />
+  <Meta v-if="!pending && data.product" name="og:title" :content=" data.product.name + ' - ' + data.product.full_name  + ' ' + data.episode.name + ' | Kẻ Trộm Phim '" />
   <Meta v-if="!pending && data.product" name="og:description" :content="data.product.meta_desc" />
   <Meta v-if="!pending && data.product" property="og:image" :content="data.product.meta_image" />
-  <Meta v-if="!pending && data.product" property="og:title" :content="'Xem phim ' + data.product.name + ' - ' + data.product.full_name + ' ' + data.episode.name + ' | Kẻ Trộm Phim '" />
+  <Meta v-if="!pending && data.product" property="og:title" :content=" data.product.name + ' - ' + data.product.full_name + ' ' + data.episode.name + ' | Kẻ Trộm Phim '" />
   <Meta v-if="!pending && data.product" property="og:description" :content="data.product.meta_desc" />
   <Meta v-if="!pending && data.product" name="image" :content="data.product.meta_image" />
-  <Meta v-if="!pending && data.product" name="title" :content="'Xem phim ' + data.product.name + ' - ' + data.product.full_name + data.episode.name" />
+  <Meta v-if="!pending && data.product" name="title" :content=" data.product.name + ' - ' + data.product.full_name + data.episode.name" />
   <Meta v-if="!pending && data.product" name="description" :content="data.product.meta_desc" />
   <NuxtLayout>
 
