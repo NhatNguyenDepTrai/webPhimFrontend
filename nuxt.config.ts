@@ -12,12 +12,7 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
     }
   },
-  nitro: {
-    prerender: {
-      crawlLinks: true,
-      routes: ['https://www.ketromphim.com/', 'sitemap.xml'],
-    },
-  },
+
   modules: [
     'nuxt-icon',
     '@nuxtjs/seo',
@@ -29,7 +24,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
   ],
   sitemap: {
-    cacheMaxAgeSeconds: 3600,
+    cacheMaxAgeSeconds: 0,
     sources: ['/api/sitemap'],
   },
   image: {
