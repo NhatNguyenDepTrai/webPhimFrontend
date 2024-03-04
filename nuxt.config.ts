@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
   ],
   sitemap: {
-    cacheMaxAgeSeconds: 0,
+    cacheMaxAgeSeconds: 3600,
     sources: ['/api/sitemap'],
   },
   image: {
