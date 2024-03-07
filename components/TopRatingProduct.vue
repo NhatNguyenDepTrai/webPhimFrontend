@@ -8,7 +8,7 @@
       <li class="relative mb-3 ">
        <NuxtLink :to="'/phim/' + item.slug" class="">
           
-    <NuxtImg v-if="item.url_bg"  quality="80" format="webp"  :src="item.url_bg" class=" hover:brightness-50 w-full  h-auto" loading="lazy" alt="ketromphim.com" width="200" height="150"/>
+    <NuxtImg v-if="item.url_bg"  quality="80" format="webp"  :src="file_url+'/'+item.url_bg" class=" hover:brightness-50 w-full  h-auto" loading="lazy" alt="ketromphim.com" width="200" height="150"/>
     <NuxtImg v-else  quality="80" format="webp"  src="meta_image.png" class=" hover:brightness-50 w-full  h-auto" loading="lazy" alt="ketromphim.com" width="200" height="150"/>
      
     <div class="absolute bottom-0 left-0 p-2">
@@ -23,7 +23,7 @@
        <NuxtLink :to="'/phim/' + item.slug">
         <div class="grid grid-cols-12  w-full h-24 bg-black/50 hover:bg-black overflow-hidden text-white/80 hover:text-sky-500 ">
          <div class="col-span-3 h-full flex items-start justify-center p-1">
-    <NuxtImg :src="item.url_avatar" class="w-full  h-auto" loading="lazy" alt="ketromphim.com" width="70" height="140"/>
+    <NuxtImg :src="file_url+'/'+item.url_avatar" class="w-full  h-auto" loading="lazy" alt="ketromphim.com" width="70" height="140"/>
       
          </div>
          <div class="col-span-9 h-full p-1 py-3">
@@ -66,6 +66,12 @@ export default {
     return [];
    }
   }
+ },
+ setup(){
+  const config = useRuntimeConfig();
+
+  const file_url = config.public.fileBase;
+  return {file_url}
  }
 };
 </script>

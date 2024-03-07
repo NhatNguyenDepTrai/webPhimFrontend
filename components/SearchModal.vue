@@ -24,7 +24,7 @@
               <NuxtLink :to="'/phim/' + item.slug">
                 <div class="grid grid-cols-12 block w-full  bg-black/50 hover:bg-black  relative text-white/80 hover:text-sky-500">
                   <div class="col-span-3  flex items-start justify-center p-1">
-                    <img :src="item.url_avatar" class="w-auto  h-24" loading="lazy" alt="ketromphim.com" width="70" height="140">
+                    <NuxtImg :src="file_url + '/' + item.url_avatar" class="w-auto  h-24" loading="lazy" alt="ketromphim.com" width="70" height="140" />
                   </div>
                   <div class="col-span-9 p-1 py-3">
                     <h3 class="text-sm font-bold  text-white/90 mb-2">{{ item.name }}</h3>
@@ -46,7 +46,7 @@
     </div>
   </div>
 </template>
-<script >
+<script>
 export default {
 
   methods: {
@@ -68,7 +68,7 @@ export default {
   },
   setup() {
     const config = useRuntimeConfig();
-
+    const file_url = config.public.fileBase;
     // Sử dụng useFetch để gửi yêu cầu tìm kiếm
     const dataSearch = ref([]);
     const fetchSearchResults = async (searchText) => {
@@ -91,7 +91,7 @@ export default {
       };
     }
     return {
-      fetchSearchResults, dataSearch
+      fetchSearchResults, dataSearch, file_url
     };
   },
 }

@@ -87,7 +87,7 @@
 
       <template #topRatingProduct>
 
-        <TopRatingProduct v-if="!pending && data.dataTopProduct" :data="data.dataTopProduct" />
+        <TopRatingProduct v-if="!pending && data && data.dataTopProduct.length>0" :data="data.dataTopProduct" />
       </template>
 
 

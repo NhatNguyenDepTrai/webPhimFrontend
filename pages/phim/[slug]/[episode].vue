@@ -2,13 +2,13 @@
  <div>
   <Title v-if="!pending && data.product"> {{ data.product.name }} - {{ data.episode.name }}</Title>
   <Meta v-if="!pending && data.product" name="og:image" :content="data.product.meta_image" />
-  <Meta v-if="!pending && data.product" name="og:title" :content=" data.product.name + ' - ' + data.product.full_name  + ' ' + data.episode.name + ' | Kẻ Trộm Phim '" />
+  <Meta v-if="!pending && data.product" name="og:title" :content="data.product.name + ' - ' + data.product.full_name + ' ' + data.episode.name + ' | Kẻ Trộm Phim '" />
   <Meta v-if="!pending && data.product" name="og:description" :content="data.product.meta_desc" />
   <Meta v-if="!pending && data.product" property="og:image" :content="data.product.meta_image" />
-  <Meta v-if="!pending && data.product" property="og:title" :content=" data.product.name + ' - ' + data.product.full_name + ' ' + data.episode.name + ' | Kẻ Trộm Phim '" />
+  <Meta v-if="!pending && data.product" property="og:title" :content="data.product.name + ' - ' + data.product.full_name + ' ' + data.episode.name + ' | Kẻ Trộm Phim '" />
   <Meta v-if="!pending && data.product" property="og:description" :content="data.product.meta_desc" />
   <Meta v-if="!pending && data.product" name="image" :content="data.product.meta_image" />
-  <Meta v-if="!pending && data.product" name="title" :content=" data.product.name + ' - ' + data.product.full_name + data.episode.name" />
+  <Meta v-if="!pending && data.product" name="title" :content="data.product.name + ' - ' + data.product.full_name + data.episode.name" />
   <Meta v-if="!pending && data.product" name="description" :content="data.product.meta_desc" />
   <NuxtLayout>
 
@@ -39,14 +39,25 @@
        </li>
       </ul>
      </div>
-     
+
      <div v-if="data.embed_url">
 
-  
+
 
       <IframeVideo :type="data.server_type" :embed_url="data.embed_url" v-if="!embed_url" />
       <IframeVideo :type="data.server_type" :embed_url="embed_url" v-else />
 
+     </div>
+     <div v-else>
+      <div class="w-full md:h-96 h-56 bg-black/80 flex items-center justify-center ">
+       <div>
+        <div class="text-center">
+         <div class="text-white/80 font-bold bg-red-500/80  px-3 py-2 mb-3">Tập phim đang được cập nhập</div>
+        </div>
+
+       </div>
+
+      </div>
      </div>
      <div v-if="data.episode">
       <div class="w-full py-3">
@@ -137,7 +148,7 @@
  </div>
 </template>
 
-<script setup >
+<script setup>
 const config = useRuntimeConfig();
 const route = useRoute();
 const embed_url = ref('');

@@ -25,43 +25,44 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
-     isAds:true,
+      isAds: false,
     }
   },
- props: {
-  embed_url: String,
-  type: String,
- },
+  props: {
+    embed_url: String,
+    type: String,
+  },
 
 }
 </script>
 <style scoped>
 @media only screen and (min-width: 500px) {
- .iframe_video {
-  width: 100%;
-  height: 440px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #000;
- }
+  .iframe_video {
+    width: 100%;
+    height: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+  }
 }
 
 @media only screen and (max-width: 500px) {
- .iframe_video {
-  width: 100%;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #000;
- }
+  .iframe_video {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+  }
 }
 
-.iframe_video iframe,.iframe_video video {
- width: 100%;
- height: 100%;
+.iframe_video iframe,
+.iframe_video video {
+  width: 100%;
+  height: 100%;
 }
 </style>

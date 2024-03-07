@@ -21,7 +21,7 @@
                 
                   <div class="w-full h-full absolute top-0 left-0 -z-50">
                      
-                     <NuxtImg v-if="item.url_bg"  quality="80" format="webp"  :src="item.url_bg"  alt="ketromphim.com" loading="lazy" width="400" height="200" class="w-full h-full "/>
+                     <NuxtImg v-if="item.url_bg"  quality="80" format="webp"  :src="file_url+'/'+item.url_bg"  alt="ketromphim.com" loading="lazy" width="400" height="200" class="w-full h-full "/>
                      <NuxtImg v-else quality="80" format="webp"  src="meta_image.png"  alt="ketromphim.com" loading="lazy" width="400" height="200" class="w-full h-full "/>
                  </div>
                  
@@ -51,7 +51,12 @@ export default {
    props: {
       data: Object
    },
+   setup(){
+  const config = useRuntimeConfig();
 
+  const file_url = config.public.fileBase;
+  return {file_url}
+ }
 }
 </script>
 <style  scoped>

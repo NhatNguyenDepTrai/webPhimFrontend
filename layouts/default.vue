@@ -17,7 +17,7 @@
       <div class="lg:w-56 lg:h-full  w-auto h-8   bg-black flex items-center justify-center">
        <NuxtLink to="/">
         <h3 v-if="pending" class="text-white/80 font-bold text-xl">Kẻ Trộm Phim</h3>
-       <NuxtImg  v-else class="logo h-full w-auto" :src="data.dataWeb.url_avatar_full" width="200" height="32" alt="ketromphim.com"/>
+       <NuxtImg  v-else class="logo h-full w-auto" :src="file_url+'/'+data.dataWeb.url_avatar_full" width="200" height="32" alt="ketromphim.com"/>
 
        </NuxtLink>
       </div>
@@ -220,6 +220,7 @@
 import { ref, computed } from 'vue';
 const route = useRoute();
 const config = useRuntimeConfig();
+const file_url = config.public.fileBase;
 const { pending, data } = useFetch(config.public.apiBase + '/' + 'get-data-web', {
  lazy: true
 });

@@ -34,7 +34,7 @@
     </div>
     <div class="grid grid-cols-12" v-if="!pending && data.product">
      <div class="lg:col-span-2 col-span-4">
-      <img :src="data.product.url_avatar" class="w-full h-auto" loading="lazy" alt="ketromphim.com" width="200" height="150">
+      <NuxtImg   :src="file_url+'/'+data.product.url_avatar"  class="w-full h-auto" loading="lazy" alt="ketromphim.com" width="200" height="150"/>
      </div>
      <div class="lg:col-span-10 col-span-8 sm:py-2  pl-5">
       <h1 class="sm:text-3xl text-2xl  text-white mb-1">{{ data.product.name }}</h1>
@@ -141,7 +141,7 @@ const config = useRuntimeConfig();
 const route = useRoute();
 const dataRating = ref(null);
 const clientIp = useCookie('clientIp');
-
+const file_url = config.public.fileBase;
 const { pending, data } = useFetch(config.public.apiBase + '/' + 'get-detail-product/' + route.params.slug, {
  lazy: true
 });

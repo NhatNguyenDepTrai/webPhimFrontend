@@ -36,8 +36,10 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
+      fileBase: 'https://file.ketromphim.com',
       apiBase: 'https://api.ketromphim.com/api',
       // apiBase: 'http://api.webphim.demo/api',
+      // fileBase: 'http://file.webphim.demo',
     },
   },
   css: [
