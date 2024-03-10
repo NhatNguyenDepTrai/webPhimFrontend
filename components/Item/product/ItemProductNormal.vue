@@ -2,8 +2,8 @@
  <div>
   <div class="relative product-item" v-if="dataProduct">
    <div class="logo transition-all duration-300">
-   
-    <NuxtImg  quality="80" format="webp"  :src="file_url+'/'+dataProduct.url_avatar"  class="transition ease-in-out delay-150 bg-blue-500 	  duration-300" loading="lazy" alt="ketromphim.com" width="200" height="150"/>
+
+    <NuxtImg quality="80" format="webp" :src="file_url + '/' + dataProduct.url_avatar" class="transition ease-in-out delay-150 bg-blue-500 	  duration-300" loading="lazy" alt="ketromphim.com" width="200" height="150" />
     <div class="absolute w-full h-full bg-black/50 flex items-center justify-center play-icon   transition-all duration-150 delay-100	">
      <Icon name="fa6-solid:circle-play" class="text-white transition-all duration-300" />
     </div>
@@ -39,22 +39,24 @@ export default {
  props: {
   dataProduct: Object
  },
- setup(){
+ setup() {
   const config = useRuntimeConfig();
 
   const file_url = config.public.fileBase;
-  return {file_url}
+  return { file_url }
  }
 }
 </script>
-<style lang="css" >
+<style lang="css">
 .product-item {
  width: 100%;
  cursor: pointer;
 }
-.product-item:active{
+
+.product-item:active {
  color: skyblue;
 }
+
 .product-item h3 {
  max-height: 37px;
  overflow: hidden;
@@ -91,39 +93,42 @@ export default {
   font-size: 10px;
  }
 }
+
 @media only screen and (min-width: 501px) {
 
 
-.product-item .logo:hover img {
- transform: translateY(0.25rem);
- transform: scale(1.25);
+ .product-item .logo:hover img {
+  transform: translateY(0.25rem);
+  transform: scale(1.25);
+ }
+
+ .product-item .logo .play-icon {
+  opacity: 0;
+ }
+
+ .product-item .logo:hover .play-icon {
+  opacity: 1;
+ }
+
+ .product-item .logo .play-icon svg {
+  font-size: 70px;
+
+ }
+
+ .product-item .logo:hover .play-icon svg {
+  font-size: 50px;
+
+ }
 }
 
-.product-item .logo .play-icon {
- opacity: 0;
-}
-
-.product-item .logo:hover .play-icon {
- opacity: 1;
-}
-
-.product-item .logo .play-icon svg {
- font-size: 70px;
-
-}
-
-.product-item .logo:hover .play-icon svg {
- font-size: 50px;
-
-}
-}
 @media only screen and (max-width: 500px) {
  .product-item .logo .play-icon {
- display: none;
-}
+  display: none;
+ }
+
  .product-item .logo {
   width: 100%;
-  height: 200px;
+  height: 210px;
   display: flex;
   align-items: top;
   justify-content: center;
@@ -132,5 +137,4 @@ export default {
   font-size: 10px;
  }
 }
-
 </style>

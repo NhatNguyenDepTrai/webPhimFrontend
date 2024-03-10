@@ -16,7 +16,10 @@
 </video>
 
   </div>
-    <iframe v-else class="metaframe rptss" :src="embed_url" frameborder="0" scrolling="no" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+  <div  v-else>
+
+    <iframe class="metaframe rptss" :src="embed_url" frameborder="0" scrolling="no" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+  </div>
 
 
   </div>
@@ -25,6 +28,17 @@
 </template>
 <script>
 export default {
+  methods: {
+    isTypeVideo(url) {
+      if (url.endsWith('.mp4')) {
+        return 'mp4';
+      } else if (url.endsWith('.m3u8')) {
+        return 'm3u8';
+      } else {
+        return null;
+      }
+    }
+  },
   data() {
     return {
       isAds: false,

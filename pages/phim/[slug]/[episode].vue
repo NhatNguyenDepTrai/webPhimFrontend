@@ -44,8 +44,8 @@
 
 
 
-      <IframeVideo :type="data.server_type" :embed_url="data.embed_url" v-if="!embed_url" />
-      <IframeVideo :type="data.server_type" :embed_url="embed_url" v-else />
+      <IframeVideo :type="type" :embed_url="data.embed_url" v-if="!embed_url" />
+      <IframeVideo :type="type" :embed_url="embed_url" v-else />
 
      </div>
      <div v-else>
@@ -67,7 +67,7 @@
        <div class="border-t border-gray-500 border-solid py-3">
         <ul>
          <li v-for="(item, index) in data.episode.servers">
-          <button @click="changeServer(item.embed_url)" class="mb-1 text-white hover:text-sky-500 w-full px-3 py-4 text-start font-bold" :class="{ 'bg-gray-700/50 text-white': item.embed_url === embed_url, 'bg-gray-700/50': !embed_url && item.embed_url === data.embed_url }">
+          <button @click="changeServer(item.embed_url, item.type)" class="mb-1 text-white hover:text-sky-500 w-full px-3 py-4 text-start font-bold" :class="{ 'bg-gray-700/50 text-white': item.embed_url === embed_url, 'bg-gray-700/50': !embed_url && item.embed_url === data.embed_url }">
            Server #{{ index + 1 }}
           </button>
          </li>
@@ -84,33 +84,35 @@
       <div class="grid grid-cols-3 py-1 bg-black/50 text-white/80 text-xl font-bold">
        <div class="col-span-1">
         <div v-if="!data.previousEpisode">
-         <button class="w-full flex items-center justify-center py-3 border border-gray-500/50   bg-gray-500/10 text-white/10  cursor-not-allowed">
-          <Icon name="mdi:skip-previous-circle" class="text-4xl mx-3" /> <span class="lg:block hidden ">Tập Trước</span>
+         <button class="w-full flex items-center justify-center md:py-3 py-2 border border-gray-500/50   bg-gray-500/10 text-white/10  cursor-not-allowed">
+          <Icon name="mdi:skip-previous-circle" class="md:text-4xl text-3xl mx-3" /> <span class="lg:block hidden ">Tập Trước</span>
          </button>
         </div>
         <NuxtLink v-else :to="'/phim/' + data.product.slug + '/' + data.previousEpisode.slug">
 
-         <button class="w-full flex items-center justify-center py-3 border border-gray-500/50   hover:text-sky-600">
-          <Icon name="mdi:skip-previous-circle" class="text-4xl mx-3" /> <span class="lg:block hidden ">Tập Trước</span>
+         <button class="w-full flex items-center justify-center md:py-3 py-2 border border-gray-500/50   hover:text-sky-600">
+          <Icon name="mdi:skip-previous-circle" class="md:text-4xl text-3xl mx-3" /> <span class="lg:block hidden ">Tập Trước</span>
          </button>
         </NuxtLink>
        </div>
        <div class="col-span-1">
-        <button class="w-full flex items-center justify-center py-3 border border-gray-500/50   hover:text-sky-600">
-         <Icon name="ph:list-numbers-bold" class="text-4xl mx-3" /> <span class="lg:block hidden ">All</span>
-        </button>
+        <NuxtLink :to="'/phim/' + data.product.slug" class="text-base text-sky-700">
+         <button class="w-full flex items-center justify-center md:py-3 py-2 border border-gray-500/50   hover:text-sky-600">
+          <Icon name="ph:list-numbers-bold" class="md:text-4xl text-3xl mx-3" /> <span class="lg:block hidden ">All</span>
+         </button>
+        </NuxtLink>
        </div>
        <div class="col-span-1">
         <div v-if="!data.nextEpisode">
-         <button class="w-full flex items-center justify-center py-3 border border-gray-500/50   bg-gray-500/10 text-white/10  cursor-not-allowed">
+         <button class="w-full flex items-center justify-center md:py-3 py-2 border border-gray-500/50   bg-gray-500/10 text-white/10  cursor-not-allowed">
           <span class="lg:block hidden ">Tập Sau </span>
-          <Icon name="mdi:skip-next-circle" class="text-4xl mx-3" />
+          <Icon name="mdi:skip-next-circle" class="md:text-4xl text-3xl mx-3" />
          </button>
         </div>
         <NuxtLink v-else :to="'/phim/' + data.product.slug + '/' + data.nextEpisode.slug">
-         <button class="w-full flex items-center justify-center py-3 border border-gray-500/50   hover:text-sky-600">
+         <button class="w-full flex items-center justify-center md:py-3 py-2 border border-gray-500/50   hover:text-sky-600">
           <span class="lg:block hidden ">Tập Sau </span>
-          <Icon name="mdi:skip-next-circle" class="text-4xl mx-3" />
+          <Icon name="mdi:skip-next-circle" class="md:text-4xl text-3xl mx-3" />
          </button>
         </NuxtLink>
 
@@ -152,16 +154,19 @@
 const config = useRuntimeConfig();
 const route = useRoute();
 const embed_url = ref('');
+const type = ref('');
 const { pending, data } = useFetch(config.public.apiBase + '/' + 'get-episode/' + route.params.slug + '/' + route.params.episode, {
  lazy: true
 });
 watch(data, () => {
  if (data.value.embed_url) {
   embed_url.value = data.value.embed_url;
+  type.value = data.value.server_type;
  }
 });
-const changeServer = (url) => {
+const changeServer = (url, server_type) => {
  embed_url.value = url;
+ type.value = server_type;
 };
 
 
